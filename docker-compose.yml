@@ -1,0 +1,34 @@
+version: '3.5'
+services:
+    postgres:
+        image: 'postgres:latest'
+        restart: always
+        networks:
+            - IntegrationService
+        ports:
+            - '5555:5432'
+
+    api:
+        restart: always
+        build:
+          dockerfile: Dockerfile
+          context: ./
+        volumes:
+          - ./vendor #do not try overwrite it
+          - ./:/go/src/github.com/PerrySong/OAuth
+        environment:
+          - PGUSER=postgres
+          - PGHOST=postgres
+          - PGDATABASE=postgres
+          - PGPASSWORD=postgres
+          - PGPORT=5432
+        networks:
+          - IntegrationService
+        ports:
+          - '8080:8080'
+
+networks:
+  IntegrationService:
+    # Use a custom driver
+    name: workflow
+    driver: bridge
