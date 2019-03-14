@@ -13,9 +13,7 @@ services:
         build:
           dockerfile: Dockerfile
           context: ./
-        volumes:
-          - ./vendor #do not try overwrite it
-          - ./:/go/src/github.com/PerrySong/OAuth
+
         environment:
           - PGUSER=postgres
           - PGHOST=postgres
@@ -30,5 +28,5 @@ services:
 networks:
   IntegrationService:
     # Use a custom driver
-    name: workflow
+    name: IntegrationService
     driver: bridge
