@@ -38,7 +38,6 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 func initDb() {
 
 	db, err := models.GetDb()
-	db.SingularTable(true)
 	if err != nil {
 		panic(err.Error())
 	}

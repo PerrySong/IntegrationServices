@@ -2,11 +2,22 @@ package services
 
 import (
 	"github.com/PerrySong/OAuth2/models"
+	"github.com/PerrySong/OAuth2/util"
 )
 
 func GetGithubToken(id uint64) (string, error) {
 	token, err := models.GetGitToken(id)
 	return token, err
+}
+
+func FetchUserFromGithub(id uint64, user *models.User) error {
+	token, err := GetGithubToken(id)
+	if err != nil {
+		return err
+	}
+	err = util.FetchFromWeb("https://api.github.com/user?access_token="+token, user)
+	user.UserId = uint64(id)
+	return err
 }
 
 //func GithubWholeInfo(id uint64) {

@@ -12,7 +12,7 @@ type Repository struct {
 
 type GithubUser struct {
 	UserName          string    `json:"login"`
-	UserId            int       `json:"id"`
+	GitUserId         int       `json:"id"`
 	NodeId            string    `json:"node_id"`
 	AvatarUrl         string    `json:"avatar_url"`
 	GravatarId        string    `json:"gravatar_id"`
@@ -47,4 +47,5 @@ type GithubUser struct {
 type User struct {
 	gorm.Model
 	GithubUser
+	UserId uint64
 }

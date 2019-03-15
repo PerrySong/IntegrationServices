@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package user;
+option go_package="userpb";
+
+
+message UserGithubBasicResponse {
+    int64 id = 1;
+    string username = 2;
+    string url = 3;
+    string avatar_url = 4;
+    string bio = 5;
+    string company = 6;
+    string repos_url = 7;
+    string email = 8;
+    string location = 9;
+    int32 public_repos = 10;
+}
+
+message UserGithubBasicRequest {
+    uint64 id = 1;
+}
+
+service UserService {
+    rpc GetGithubInfo(UserGithubBasicRequest) returns (UserGithubBasicResponse) {};
+}

@@ -2,6 +2,8 @@ package util
 
 import (
 	"encoding/json"
+	"errors"
+	"fmt"
 	"net/http"
 	"time"
 )
@@ -13,6 +15,12 @@ func FetchFromWeb(url string, target interface{}) error {
 	var myClient = &http.Client{Timeout: 10 * time.Second}
 	r, err := myClient.Get(url)
 	if err != nil {
+		return err
+	}
+	fmt.Println(url)
+	fmt.Println(r)
+	if r.StatusCode != 200 {
+		err = errors.New("Fail to fetch user from github: " + r.Status)
 		return err
 	}
 	defer r.Body.Close()

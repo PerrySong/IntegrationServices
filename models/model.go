@@ -16,5 +16,16 @@ func Migrate(db *gorm.DB, table interface{}) {
 }
 
 func GetDb() (*gorm.DB, error) {
-	return gorm.Open("postgres", "user=postgres password=postgres dbname=postgres sslmode=disable")
+	db, err := gorm.Open("postgres", "user=postgres password=postgres dbname=postgres sslmode=disable")
+	db.SingularTable(true)
+	return db, err
+}
+
+func StoreUser(user *User) error {
+	db, error := GetDb()
+	if error != nil {
+		return error
+	}
+	db.Debug().Create(&user)
+	return nil
 }

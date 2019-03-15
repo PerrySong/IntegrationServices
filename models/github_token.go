@@ -8,7 +8,7 @@ import (
 type GithubToken struct {
 	gorm.Model
 	UserId uint64 `gorm:"UNIQUE_INDEX"`
-	Token string
+	Token  string
 }
 
 func StoreToken(tokenStr string, userid uint64) error {
@@ -32,7 +32,6 @@ func GetGitToken(userid uint64) (string, error) {
 	}
 	var token GithubToken
 	db.Debug().Where("user_id = ?", userid).Find(&token)
+	fmt.Println("token = " + token.Token)
 	return token.Token, nil
 }
-
-
