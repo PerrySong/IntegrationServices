@@ -23,7 +23,6 @@ func main() {
 }
 
 func getGithub(client userpb.UserServiceClient) {
-	//fmt.Println("Created client: %f", client)
 	req := &userpb.UserGithubBasicRequest{
 		Id: 1,
 	}

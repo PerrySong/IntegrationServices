@@ -32,3 +32,12 @@ func TestStoreUser(t *testing.T) {
 	}
 	fmt.Println(user)
 }
+
+func TestFetchReposFromGithub(t *testing.T) {
+	var repos []models.GitRepository
+	err := FetchReposFromGithub(1, &repos)
+	if err != nil {
+		t.Fatalf("Fail to fetch repos from github : %v", err)
+	}
+	fmt.Println(repos)
+}

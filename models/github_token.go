@@ -7,11 +7,11 @@ import (
 
 type GithubToken struct {
 	gorm.Model
-	UserId uint64 `gorm:"UNIQUE_INDEX"`
+	UserId uint `gorm:"UNIQUE_INDEX"`
 	Token  string
 }
 
-func StoreToken(tokenStr string, userid uint64) error {
+func StoreToken(tokenStr string, userid uint) error {
 	db, err := GetDb()
 	defer db.Close()
 
@@ -24,7 +24,7 @@ func StoreToken(tokenStr string, userid uint64) error {
 	return nil
 }
 
-func GetGitToken(userid uint64) (string, error) {
+func GetGitToken(userid uint) (string, error) {
 	db, err := GetDb()
 	defer db.Close()
 	if err != nil {
