@@ -23,7 +23,7 @@ func (*server) GetGithubInfo(ctx context.Context, req *userpb.UserGithubBasicReq
 	}
 	var user models.User
 	db.Where("user_id=?", id).First(&user)
-
+	fmt.Println("user = ", user)
 	result := &userpb.UserGithubBasicResponse{
 		Id:          int64(user.ID),
 		Username:    user.UserName,
