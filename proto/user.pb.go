@@ -22,6 +22,258 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+type Repo struct {
+	GitTagsUrl           string   `protobuf:"bytes,1,opt,name=git_tags_url,json=gitTagsUrl,proto3" json:"git_tags_url,omitempty"`
+	Description          string   `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
+	Private              string   `protobuf:"bytes,3,opt,name=private,proto3" json:"private,omitempty"`
+	LanguagesUrl         string   `protobuf:"bytes,4,opt,name=languages_url,json=languagesUrl,proto3" json:"languages_url,omitempty"`
+	StargazersUrl        string   `protobuf:"bytes,5,opt,name=stargazers_url,json=stargazersUrl,proto3" json:"stargazers_url,omitempty"`
+	CommitsUrl           string   `protobuf:"bytes,6,opt,name=commits_url,json=commitsUrl,proto3" json:"commits_url,omitempty"`
+	RepoCreatedAt        string   `protobuf:"bytes,7,opt,name=repo_created_at,json=repoCreatedAt,proto3" json:"repo_created_at,omitempty"`
+	RepoUpdatedAt        string   `protobuf:"bytes,8,opt,name=repo_updated_at,json=repoUpdatedAt,proto3" json:"repo_updated_at,omitempty"`
+	HomePage             string   `protobuf:"bytes,9,opt,name=home_page,json=homePage,proto3" json:"home_page,omitempty"`
+	StargazersCount      int32    `protobuf:"varint,10,opt,name=stargazers_count,json=stargazersCount,proto3" json:"stargazers_count,omitempty"`
+	LabelsUrl            string   `protobuf:"bytes,11,opt,name=labels_url,json=labelsUrl,proto3" json:"labels_url,omitempty"`
+	Language             string   `protobuf:"bytes,12,opt,name=language,proto3" json:"language,omitempty"`
+	Watchers             int32    `protobuf:"varint,13,opt,name=watchers,proto3" json:"watchers,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Repo) Reset()         { *m = Repo{} }
+func (m *Repo) String() string { return proto.CompactTextString(m) }
+func (*Repo) ProtoMessage()    {}
+func (*Repo) Descriptor() ([]byte, []int) {
+	return fileDescriptor_116e343673f7ffaf, []int{0}
+}
+
+func (m *Repo) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Repo.Unmarshal(m, b)
+}
+func (m *Repo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Repo.Marshal(b, m, deterministic)
+}
+func (m *Repo) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Repo.Merge(m, src)
+}
+func (m *Repo) XXX_Size() int {
+	return xxx_messageInfo_Repo.Size(m)
+}
+func (m *Repo) XXX_DiscardUnknown() {
+	xxx_messageInfo_Repo.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Repo proto.InternalMessageInfo
+
+func (m *Repo) GetGitTagsUrl() string {
+	if m != nil {
+		return m.GitTagsUrl
+	}
+	return ""
+}
+
+func (m *Repo) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
+func (m *Repo) GetPrivate() string {
+	if m != nil {
+		return m.Private
+	}
+	return ""
+}
+
+func (m *Repo) GetLanguagesUrl() string {
+	if m != nil {
+		return m.LanguagesUrl
+	}
+	return ""
+}
+
+func (m *Repo) GetStargazersUrl() string {
+	if m != nil {
+		return m.StargazersUrl
+	}
+	return ""
+}
+
+func (m *Repo) GetCommitsUrl() string {
+	if m != nil {
+		return m.CommitsUrl
+	}
+	return ""
+}
+
+func (m *Repo) GetRepoCreatedAt() string {
+	if m != nil {
+		return m.RepoCreatedAt
+	}
+	return ""
+}
+
+func (m *Repo) GetRepoUpdatedAt() string {
+	if m != nil {
+		return m.RepoUpdatedAt
+	}
+	return ""
+}
+
+func (m *Repo) GetHomePage() string {
+	if m != nil {
+		return m.HomePage
+	}
+	return ""
+}
+
+func (m *Repo) GetStargazersCount() int32 {
+	if m != nil {
+		return m.StargazersCount
+	}
+	return 0
+}
+
+func (m *Repo) GetLabelsUrl() string {
+	if m != nil {
+		return m.LabelsUrl
+	}
+	return ""
+}
+
+func (m *Repo) GetLanguage() string {
+	if m != nil {
+		return m.Language
+	}
+	return ""
+}
+
+func (m *Repo) GetWatchers() int32 {
+	if m != nil {
+		return m.Watchers
+	}
+	return 0
+}
+
+type GithubRepoListResponse struct {
+	Repos                []*Repo  `protobuf:"bytes,1,rep,name=repos,proto3" json:"repos,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GithubRepoListResponse) Reset()         { *m = GithubRepoListResponse{} }
+func (m *GithubRepoListResponse) String() string { return proto.CompactTextString(m) }
+func (*GithubRepoListResponse) ProtoMessage()    {}
+func (*GithubRepoListResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_116e343673f7ffaf, []int{1}
+}
+
+func (m *GithubRepoListResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GithubRepoListResponse.Unmarshal(m, b)
+}
+func (m *GithubRepoListResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GithubRepoListResponse.Marshal(b, m, deterministic)
+}
+func (m *GithubRepoListResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GithubRepoListResponse.Merge(m, src)
+}
+func (m *GithubRepoListResponse) XXX_Size() int {
+	return xxx_messageInfo_GithubRepoListResponse.Size(m)
+}
+func (m *GithubRepoListResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GithubRepoListResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GithubRepoListResponse proto.InternalMessageInfo
+
+func (m *GithubRepoListResponse) GetRepos() []*Repo {
+	if m != nil {
+		return m.Repos
+	}
+	return nil
+}
+
+type GithubRepoListRequest struct {
+	Id                   uint64   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GithubRepoListRequest) Reset()         { *m = GithubRepoListRequest{} }
+func (m *GithubRepoListRequest) String() string { return proto.CompactTextString(m) }
+func (*GithubRepoListRequest) ProtoMessage()    {}
+func (*GithubRepoListRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_116e343673f7ffaf, []int{2}
+}
+
+func (m *GithubRepoListRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GithubRepoListRequest.Unmarshal(m, b)
+}
+func (m *GithubRepoListRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GithubRepoListRequest.Marshal(b, m, deterministic)
+}
+func (m *GithubRepoListRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GithubRepoListRequest.Merge(m, src)
+}
+func (m *GithubRepoListRequest) XXX_Size() int {
+	return xxx_messageInfo_GithubRepoListRequest.Size(m)
+}
+func (m *GithubRepoListRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GithubRepoListRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GithubRepoListRequest proto.InternalMessageInfo
+
+func (m *GithubRepoListRequest) GetId() uint64 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+type UserGithubBasicRequest struct {
+	Id                   uint64   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *UserGithubBasicRequest) Reset()         { *m = UserGithubBasicRequest{} }
+func (m *UserGithubBasicRequest) String() string { return proto.CompactTextString(m) }
+func (*UserGithubBasicRequest) ProtoMessage()    {}
+func (*UserGithubBasicRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_116e343673f7ffaf, []int{3}
+}
+
+func (m *UserGithubBasicRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_UserGithubBasicRequest.Unmarshal(m, b)
+}
+func (m *UserGithubBasicRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_UserGithubBasicRequest.Marshal(b, m, deterministic)
+}
+func (m *UserGithubBasicRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_UserGithubBasicRequest.Merge(m, src)
+}
+func (m *UserGithubBasicRequest) XXX_Size() int {
+	return xxx_messageInfo_UserGithubBasicRequest.Size(m)
+}
+func (m *UserGithubBasicRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_UserGithubBasicRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_UserGithubBasicRequest proto.InternalMessageInfo
+
+func (m *UserGithubBasicRequest) GetId() uint64 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
 type UserGithubBasicResponse struct {
 	Id                   int64    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Username             string   `protobuf:"bytes,2,opt,name=username,proto3" json:"username,omitempty"`
@@ -42,7 +294,7 @@ func (m *UserGithubBasicResponse) Reset()         { *m = UserGithubBasicResponse
 func (m *UserGithubBasicResponse) String() string { return proto.CompactTextString(m) }
 func (*UserGithubBasicResponse) ProtoMessage()    {}
 func (*UserGithubBasicResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_116e343673f7ffaf, []int{0}
+	return fileDescriptor_116e343673f7ffaf, []int{4}
 }
 
 func (m *UserGithubBasicResponse) XXX_Unmarshal(b []byte) error {
@@ -133,73 +385,53 @@ func (m *UserGithubBasicResponse) GetPublicRepos() int32 {
 	return 0
 }
 
-type UserGithubBasicRequest struct {
-	Id                   uint64   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *UserGithubBasicRequest) Reset()         { *m = UserGithubBasicRequest{} }
-func (m *UserGithubBasicRequest) String() string { return proto.CompactTextString(m) }
-func (*UserGithubBasicRequest) ProtoMessage()    {}
-func (*UserGithubBasicRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_116e343673f7ffaf, []int{1}
-}
-
-func (m *UserGithubBasicRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_UserGithubBasicRequest.Unmarshal(m, b)
-}
-func (m *UserGithubBasicRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_UserGithubBasicRequest.Marshal(b, m, deterministic)
-}
-func (m *UserGithubBasicRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UserGithubBasicRequest.Merge(m, src)
-}
-func (m *UserGithubBasicRequest) XXX_Size() int {
-	return xxx_messageInfo_UserGithubBasicRequest.Size(m)
-}
-func (m *UserGithubBasicRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UserGithubBasicRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_UserGithubBasicRequest proto.InternalMessageInfo
-
-func (m *UserGithubBasicRequest) GetId() uint64 {
-	if m != nil {
-		return m.Id
-	}
-	return 0
-}
-
 func init() {
-	proto.RegisterType((*UserGithubBasicResponse)(nil), "user.UserGithubBasicResponse")
+	proto.RegisterType((*Repo)(nil), "user.Repo")
+	proto.RegisterType((*GithubRepoListResponse)(nil), "user.GithubRepoListResponse")
+	proto.RegisterType((*GithubRepoListRequest)(nil), "user.GithubRepoListRequest")
 	proto.RegisterType((*UserGithubBasicRequest)(nil), "user.UserGithubBasicRequest")
+	proto.RegisterType((*UserGithubBasicResponse)(nil), "user.UserGithubBasicResponse")
 }
 
 func init() { proto.RegisterFile("user.proto", fileDescriptor_116e343673f7ffaf) }
 
 var fileDescriptor_116e343673f7ffaf = []byte{
-	// 293 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x74, 0x51, 0x4f, 0x4b, 0x3b, 0x31,
-	0x14, 0xfc, 0xed, 0xdf, 0xee, 0xbe, 0xfe, 0x14, 0x09, 0xa2, 0xa1, 0x5a, 0x58, 0xf7, 0xb4, 0xa7,
-	0x1e, 0xf4, 0x1b, 0xf4, 0x52, 0xbc, 0x78, 0x58, 0xe9, 0x45, 0x90, 0x92, 0x6c, 0x23, 0x06, 0x76,
-	0x37, 0x31, 0xc9, 0x16, 0xfc, 0x1e, 0x7e, 0x60, 0x79, 0x09, 0x15, 0x41, 0xbd, 0xbd, 0x99, 0x79,
-	0x33, 0x09, 0xf3, 0x00, 0x26, 0x2b, 0xcc, 0x4a, 0x1b, 0xe5, 0x14, 0x49, 0x71, 0xae, 0x3f, 0x62,
-	0xb8, 0xdc, 0x5a, 0x61, 0x36, 0xd2, 0xbd, 0x4e, 0x7c, 0xcd, 0xac, 0xec, 0x5a, 0x61, 0xb5, 0x1a,
-	0xad, 0x20, 0xa7, 0x10, 0xcb, 0x3d, 0x8d, 0xaa, 0xa8, 0x49, 0xda, 0x58, 0xee, 0xc9, 0x02, 0x0a,
-	0xf4, 0x8c, 0x6c, 0x10, 0x34, 0xae, 0xa2, 0xa6, 0x6c, 0xbf, 0x30, 0x39, 0x83, 0x64, 0x32, 0x3d,
-	0x4d, 0x3c, 0x8d, 0x23, 0x59, 0x02, 0xb0, 0x03, 0x73, 0xcc, 0xec, 0x50, 0x48, 0xbd, 0x50, 0x06,
-	0x66, 0x6b, 0x7a, 0x34, 0x70, 0xa9, 0x68, 0x16, 0x0c, 0x5c, 0x2a, 0x42, 0x61, 0xd6, 0xa9, 0x41,
-	0xb3, 0xf1, 0x9d, 0xe6, 0x9e, 0x3d, 0x42, 0x72, 0x05, 0xa5, 0x11, 0x5a, 0x59, 0x9f, 0x34, 0x0b,
-	0x2f, 0x7b, 0x02, 0x83, 0xce, 0x21, 0x13, 0x03, 0x93, 0x3d, 0x2d, 0xbc, 0x10, 0x00, 0xfe, 0xb5,
-	0x57, 0x1d, 0x73, 0x52, 0x8d, 0xb4, 0x0c, 0x8e, 0x23, 0x26, 0x37, 0xf0, 0x5f, 0x4f, 0xbc, 0x97,
-	0xdd, 0xce, 0x87, 0x50, 0xa8, 0xa2, 0x26, 0x6b, 0xe7, 0x81, 0x6b, 0x91, 0xaa, 0x1b, 0xb8, 0xf8,
-	0xd1, 0xca, 0xdb, 0x24, 0xac, 0xfb, 0x56, 0x4a, 0x8a, 0xa5, 0xdc, 0x3e, 0xc3, 0x1c, 0x37, 0x1f,
-	0x85, 0x39, 0xc8, 0x4e, 0x90, 0x07, 0x38, 0xd9, 0x08, 0x17, 0x7c, 0xf7, 0xe3, 0x8b, 0x22, 0xd7,
-	0x2b, 0xdf, 0xf9, 0xef, 0x69, 0x8b, 0xe5, 0x1f, 0x6a, 0xb8, 0x40, 0xfd, 0x6f, 0x5d, 0x3c, 0xe5,
-	0xb8, 0xa1, 0x39, 0xcf, 0xfd, 0xd9, 0xee, 0x3e, 0x03, 0x00, 0x00, 0xff, 0xff, 0xca, 0x26, 0xf9,
-	0x2f, 0xc4, 0x01, 0x00, 0x00,
+	// 555 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x74, 0x54, 0xc1, 0x6e, 0xd3, 0x40,
+	0x10, 0x25, 0x71, 0xd2, 0x26, 0xe3, 0x24, 0x8d, 0x56, 0x50, 0xac, 0xb4, 0x15, 0x26, 0x08, 0x08,
+	0x97, 0x1e, 0xca, 0x8d, 0x5b, 0xdb, 0x43, 0x85, 0x04, 0x08, 0x19, 0x72, 0xe1, 0x62, 0xad, 0x9d,
+	0xc5, 0x59, 0xc9, 0xf6, 0x9a, 0xdd, 0x75, 0x10, 0x7c, 0x07, 0x9f, 0xc1, 0x47, 0xf0, 0x69, 0x68,
+	0x76, 0xec, 0x24, 0x82, 0xf4, 0xb6, 0xf3, 0xe6, 0xf9, 0xed, 0xec, 0x9b, 0x27, 0x03, 0xd4, 0x46,
+	0xe8, 0xcb, 0x4a, 0x2b, 0xab, 0x58, 0x0f, 0xcf, 0xf3, 0x3f, 0x1e, 0xf4, 0x22, 0x51, 0x29, 0x16,
+	0xc2, 0x28, 0x93, 0x36, 0xb6, 0x3c, 0x33, 0x71, 0xad, 0xf3, 0xa0, 0x13, 0x76, 0x16, 0xc3, 0x08,
+	0x32, 0x69, 0x3f, 0xf3, 0xcc, 0x2c, 0x75, 0xce, 0x42, 0xf0, 0x57, 0xc2, 0xa4, 0x5a, 0x56, 0x56,
+	0xaa, 0x32, 0xe8, 0x3a, 0xc2, 0x3e, 0xc4, 0x02, 0x38, 0xae, 0xb4, 0xdc, 0x70, 0x2b, 0x02, 0xcf,
+	0x75, 0xdb, 0x92, 0x3d, 0x83, 0x71, 0xce, 0xcb, 0xac, 0xe6, 0x99, 0x20, 0xf9, 0x9e, 0xeb, 0x8f,
+	0xb6, 0x20, 0x5e, 0xf0, 0x1c, 0x26, 0xc6, 0x72, 0x9d, 0xf1, 0x9f, 0x42, 0x13, 0xab, 0xef, 0x58,
+	0xe3, 0x1d, 0x8a, 0xb4, 0x27, 0xe0, 0xa7, 0xaa, 0x28, 0xa4, 0x25, 0xce, 0x11, 0x0d, 0xda, 0x40,
+	0x48, 0x78, 0x01, 0x27, 0x5a, 0x54, 0x2a, 0x4e, 0xb5, 0xe0, 0x56, 0xac, 0x62, 0x6e, 0x83, 0x63,
+	0x12, 0x42, 0xf8, 0x96, 0xd0, 0x6b, 0xbb, 0xe5, 0xd5, 0xd5, 0xaa, 0xe5, 0x0d, 0x76, 0xbc, 0x25,
+	0xa1, 0xd7, 0x96, 0x9d, 0xc1, 0x70, 0xad, 0x0a, 0x11, 0x57, 0x3c, 0x13, 0xc1, 0xd0, 0x31, 0x06,
+	0x08, 0x7c, 0xe4, 0x99, 0x60, 0xaf, 0x60, 0xba, 0x37, 0x74, 0xaa, 0xea, 0xd2, 0x06, 0x10, 0x76,
+	0x16, 0xfd, 0xe8, 0x64, 0x87, 0xdf, 0x22, 0xcc, 0x2e, 0x00, 0x72, 0x9e, 0x88, 0x9c, 0xe6, 0xf6,
+	0x9d, 0xd0, 0x90, 0x10, 0x1c, 0x7b, 0x06, 0x83, 0xd6, 0x8e, 0x60, 0x44, 0xb7, 0xb4, 0x35, 0xf6,
+	0xbe, 0x73, 0x9b, 0xae, 0x85, 0x36, 0xc1, 0xd8, 0xa9, 0x6f, 0xeb, 0xf9, 0x1b, 0x38, 0xbd, 0x93,
+	0x76, 0x5d, 0x27, 0xb8, 0xc7, 0x77, 0xd2, 0xd8, 0x48, 0x98, 0x4a, 0x95, 0x46, 0xb0, 0x10, 0xfa,
+	0xf8, 0x12, 0x13, 0x74, 0x42, 0x6f, 0xe1, 0x5f, 0xc1, 0xa5, 0x5b, 0x3f, 0xd2, 0x22, 0x6a, 0xcc,
+	0x5f, 0xc2, 0xa3, 0x7f, 0xbf, 0xfd, 0x56, 0x0b, 0x63, 0xd9, 0x04, 0xba, 0x72, 0xe5, 0x42, 0xd0,
+	0x8b, 0xba, 0x72, 0x35, 0x5f, 0xc0, 0xe9, 0xd2, 0x08, 0x4d, 0xe4, 0x1b, 0x6e, 0x64, 0x7a, 0x1f,
+	0xf3, 0x57, 0x17, 0x1e, 0xff, 0x47, 0x6d, 0x06, 0xda, 0x71, 0x3d, 0xe4, 0xe2, 0xb3, 0x70, 0xa4,
+	0x92, 0x17, 0xa2, 0xc9, 0xd3, 0xb6, 0x66, 0x53, 0xf0, 0xd0, 0x26, 0x0a, 0x12, 0x1e, 0xd1, 0x3f,
+	0xbe, 0xe1, 0x96, 0xeb, 0xbd, 0x04, 0x0d, 0x09, 0x41, 0xff, 0xa6, 0xe0, 0x25, 0x52, 0x35, 0x99,
+	0xc1, 0x23, 0xe6, 0x31, 0x55, 0x45, 0xc5, 0xcb, 0x1f, 0x4d, 0x4a, 0xda, 0x12, 0x57, 0xea, 0x0c,
+	0x70, 0x4a, 0x14, 0x8e, 0x81, 0x03, 0x50, 0xe8, 0x21, 0xf4, 0x45, 0xc1, 0x65, 0xde, 0xa4, 0x81,
+	0x0a, 0xb7, 0x1e, 0x95, 0x72, 0x97, 0xfd, 0x26, 0x04, 0x6d, 0xcd, 0x9e, 0xc2, 0xa8, 0xaa, 0x93,
+	0x5c, 0xa6, 0x31, 0xf9, 0x4d, 0x01, 0xf0, 0x09, 0x43, 0x6b, 0xcd, 0xd5, 0xef, 0x0e, 0xf8, 0x68,
+	0xcb, 0x27, 0xa1, 0x37, 0x32, 0x15, 0xec, 0x03, 0x8c, 0xef, 0x84, 0x25, 0x93, 0xde, 0x96, 0x5f,
+	0x15, 0x3b, 0xa7, 0xed, 0x1c, 0x76, 0x79, 0x76, 0x71, 0x4f, 0x97, 0x8c, 0x9d, 0x3f, 0x60, 0xef,
+	0x61, 0xb2, 0xd5, 0x73, 0x37, 0xb2, 0x33, 0xfa, 0xe4, 0xe0, 0x7e, 0x67, 0xe7, 0x87, 0x9b, 0xad,
+	0xdc, 0xcd, 0xe0, 0xcb, 0x11, 0x12, 0xaa, 0x24, 0x39, 0x72, 0xbf, 0x8b, 0xd7, 0x7f, 0x03, 0x00,
+	0x00, 0xff, 0xff, 0x75, 0x4b, 0xcf, 0x8d, 0x3c, 0x04, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -215,6 +447,7 @@ const _ = grpc.SupportPackageIsVersion4
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type UserServiceClient interface {
 	GetGithubInfo(ctx context.Context, in *UserGithubBasicRequest, opts ...grpc.CallOption) (*UserGithubBasicResponse, error)
+	GetGithubRepos(ctx context.Context, in *GithubRepoListRequest, opts ...grpc.CallOption) (*GithubRepoListResponse, error)
 }
 
 type userServiceClient struct {
@@ -234,9 +467,19 @@ func (c *userServiceClient) GetGithubInfo(ctx context.Context, in *UserGithubBas
 	return out, nil
 }
 
+func (c *userServiceClient) GetGithubRepos(ctx context.Context, in *GithubRepoListRequest, opts ...grpc.CallOption) (*GithubRepoListResponse, error) {
+	out := new(GithubRepoListResponse)
+	err := c.cc.Invoke(ctx, "/user.UserService/GetGithubRepos", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 type UserServiceServer interface {
 	GetGithubInfo(context.Context, *UserGithubBasicRequest) (*UserGithubBasicResponse, error)
+	GetGithubRepos(context.Context, *GithubRepoListRequest) (*GithubRepoListResponse, error)
 }
 
 func RegisterUserServiceServer(s *grpc.Server, srv UserServiceServer) {
@@ -261,6 +504,24 @@ func _UserService_GetGithubInfo_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_GetGithubRepos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GithubRepoListRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).GetGithubRepos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user.UserService/GetGithubRepos",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).GetGithubRepos(ctx, req.(*GithubRepoListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _UserService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "user.UserService",
 	HandlerType: (*UserServiceServer)(nil),
@@ -268,6 +529,10 @@ var _UserService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetGithubInfo",
 			Handler:    _UserService_GetGithubInfo_Handler,
+		},
+		{
+			MethodName: "GetGithubRepos",
+			Handler:    _UserService_GetGithubRepos_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
