@@ -10,21 +10,34 @@ func GetGithubToken(id uint) (string, error) {
 	return token, err
 }
 
-func FetchUserFromGithub(id uint, user *models.User) error {
-	token, err := GetGithubToken(id)
+func FetchUserFromGithub(userId uint, user *models.GithubUser) error {
+	token, err := GetGithubToken(userId)
 	if err != nil {
 		return err
 	}
 	err = util.FetchFromWeb("https://api.github.com/user?access_token="+token, user)
-	user.ID = uint(id)
+	user.UserId = uint(userId)
 	return err
 }
 
-func FetchReposFromGithub(id uint, repos *[]models.GitRepository) error {
-	token, err := GetGithubToken(id)
+func FetchReposFromGithub(userId uint, repos *[]models.GitRepository) error {
+	token, err := GetGithubToken(userId)
 	if err != nil {
 		return err
 	}
 	err = util.FetchFromWeb("https://api.github.com/user/repos?access_token="+token, repos)
 	return err
+}
+
+func StoreRepos(userId uint, repos []models.GitRepository) {
+	for i := 0; i < len(repos); i++ {
+		repo := models.Repository{
+			GitRepository: (repos)[i],
+			UserId:        userId,
+		}
+		err := models.StoreRepo(&repo)
+		if err != nil {
+			panic(err)
+		}
+	}
 }

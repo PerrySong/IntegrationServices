@@ -7,14 +7,14 @@ import (
 )
 
 func TestFetchGithubInfo(t *testing.T) {
-	_, err := GetGithubToken(1)
+	_, err := GetGithubToken(2)
 	if err != nil {
 		t.Error(err)
 	}
 }
 
 func TestFetchUserFromGithub(t *testing.T) {
-	var user models.User
+	var user models.GithubUser
 	err := FetchUserFromGithub(1, &user)
 	if err != nil {
 		t.Error(err)
@@ -23,7 +23,7 @@ func TestFetchUserFromGithub(t *testing.T) {
 }
 
 func TestStoreUser(t *testing.T) {
-	var user models.User
+	var user models.GithubUser
 	if err := FetchUserFromGithub(1, &user); err != nil {
 		t.Fatalf("Error when fetching user from github")
 	}
@@ -40,4 +40,14 @@ func TestFetchReposFromGithub(t *testing.T) {
 		t.Fatalf("Fail to fetch repos from github : %v", err)
 	}
 	fmt.Println(repos)
+}
+
+func TestStoreRepos(t *testing.T) {
+	var repos []models.GitRepository
+	err := FetchReposFromGithub(1, &repos)
+	if err != nil {
+		t.Fatalf("Fail to fetch repos from github : %v", err)
+	}
+	StoreRepos(1, repos)
+
 }

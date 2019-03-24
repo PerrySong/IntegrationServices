@@ -21,8 +21,8 @@ func (*server) GetGithubInfo(ctx context.Context, req *userpb.UserGithubBasicReq
 	if err != nil {
 		log.Fatalf("Can not get db %v", err)
 	}
-	var user models.User
-	db.Where("user_id=?", id).First(&user)
+	var user models.GithubUser
+	db.Debug().Where("user_id=?", id).First(&user)
 	result := &userpb.UserGithubBasicResponse{
 		Id:          int64(user.ID),
 		Username:    user.UserName,

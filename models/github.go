@@ -85,6 +85,7 @@ type Repository struct {
 }
 
 type GithubUser struct {
+	gorm.Model
 	UserName          string    `json:"login"`
 	GitUserId         int       `json:"id"`
 	NodeId            string    `json:"node_id"`
@@ -116,10 +117,7 @@ type GithubUser struct {
 	Following         int       `json:"following"`
 	GithubCreateAt    time.Time `json:"created_at"`
 	GithubUpdateAt    time.Time `json:"updated_at"`
-}
 
-type User struct {
-	gorm.Model
-	GithubUser
-	Repositories []Repository `gorm:"foreignkey:UserId"`
+	UserId       uint
+	Repositories []Repository `gorm:"foreignkey:UserId;association_foreignkey:UserId"`
 }

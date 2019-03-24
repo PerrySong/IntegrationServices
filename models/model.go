@@ -21,11 +21,20 @@ func GetDb() (*gorm.DB, error) {
 	return db, err
 }
 
-func StoreUser(user *User) error {
+func StoreUser(user *GithubUser) error {
 	db, error := GetDb()
 	if error != nil {
 		return error
 	}
 	db.Debug().Create(&user)
+	return nil
+}
+
+func StoreRepo(repo *Repository) error {
+	db, error := GetDb()
+	if error != nil {
+		return error
+	}
+	db.Debug().Create(&repo)
 	return nil
 }

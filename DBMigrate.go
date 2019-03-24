@@ -10,5 +10,5 @@ func main() {
 	models.Migrate(db, &models.GithubToken{})
 	models.Migrate(db, &models.LinkedinToken{})
 	models.Migrate(db, &models.Repository{})
-	models.Migrate(db, &models.User{})
+	models.Migrate(db, &models.GithubUser{})
 }
