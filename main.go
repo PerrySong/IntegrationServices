@@ -9,9 +9,6 @@ import (
 )
 
 func main() {
-
-	initDb()
-
 	http.HandleFunc("/", handleHome)
 	http.HandleFunc("/login", services.HandleLoginGoogle)
 	http.HandleFunc("/callback", services.HandleCallbackGoogle)
@@ -44,5 +41,5 @@ func initDb() {
 	models.Migrate(db, &models.GithubToken{})
 	models.Migrate(db, &models.LinkedinToken{})
 	models.Migrate(db, &models.Repository{})
-	models.Migrate(db, &models.User{})
+	models.Migrate(db, &models.GithubUser{})
 }
