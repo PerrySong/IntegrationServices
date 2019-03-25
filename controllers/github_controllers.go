@@ -5,7 +5,6 @@ import (
 	"github.com/PerrySong/OAuth2/models"
 	"github.com/PerrySong/OAuth2/services"
 	"golang.org/x/oauth2"
-	"io/ioutil"
 	"net/http"
 )
 
@@ -44,31 +43,35 @@ func GithubCallbackHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("err storing token ", err)
 	}
 
-	tokenStr, err := models.GetGitToken(1)
-	if err != nil {
-		fmt.Println("fail to get token", token.AccessToken)
-	}
+	//tokenStr, err := models.GetGitToken(1)
+	//if err != nil {
+	//	fmt.Println("fail to get token", token.AccessToken)
+	//}
 
-	fmt.Printf("Get token from user1, token = %s", tokenStr)
+	//fmt.Printf("Get token from user1, token = %s", tokenStr)
 
-	resp, err := http.Get("https://api.github.com/user?access_token=" + token.AccessToken)
+	//resp, err := http.Get("https://api.github.com/user?access_token=" + token.AccessToken)
+	//
+	//if err != nil {
+	//	fmt.Printf("could not create token: %s\n", err.Error())
+	//	http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
+	//	return
+	//}
 
-	//http.Redirect(w, r, "/transfer", http.StatusTemporaryRedirect)
-	//return
-	if err != nil {
-		fmt.Printf("could not create token: %s\n", err.Error())
-		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
-		return
-	}
+	//defer resp.Body.Close()
+	//content, err := ioutil.ReadAll(resp.Body)
+	//if err != nil {
+	//	fmt.Printf("could not parse response: %s\n", err.Error())
+	//	http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
+	//	return
+	//}
 
-	defer resp.Body.Close()
-	content, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		fmt.Printf("could not parse response: %s\n", err.Error())
-		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
-		return
-	}
+	html := `<html><body>	
+				<form action="localhost:3000">
+					<input type="submit" value="go to your main page" />
+				</form>
+			</body></html>`
 
-	fmt.Fprintf(w, "Response: %s", content)
+	fmt.Fprintf(w, html)
 
 }
