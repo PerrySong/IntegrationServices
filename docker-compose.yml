@@ -8,23 +8,23 @@ services:
         ports:
             - '5555:5432'
 
-    #api:
+    api:
 
-    #   restart: always
-     #   build:
-      #    dockerfile: Dockerfile
-       #   context: ./
+        restart: always
+        build:
+          dockerfile: Dockerfile
+          context: ./
 
-        #environment:
-         # - PGUSER=postgres
-          #- PGHOST=postgres
-         # - PGDATABASE=postgres
-         # - PGPASSWORD=postgres
-         # - PGPORT=5432
-        #networks:
-        #  - IntegrationService
-        #ports:
-         # - '8080:8080'
+        environment:
+          - PGUSER=postgres
+          - PGHOST=postgres
+          - PGDATABASE=postgres
+          - PGPASSWORD=postgres
+          - PGPORT=5432
+        networks:
+          - IntegrationService
+        ports:
+          - '8080:8080'
 networks:
   IntegrationService:
     # Use a custom driver
