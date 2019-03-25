@@ -52,9 +52,9 @@ func GithubCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Get token from user1, token = %s", tokenStr)
 
 	resp, err := http.Get("https://api.github.com/user?access_token=" + token.AccessToken)
-	//fmt.Println("here")
-	http.Redirect(w, r, "localhost:9090", http.StatusTemporaryRedirect)
-	return
+
+	//http.Redirect(w, r, "/transfer", http.StatusTemporaryRedirect)
+	//return
 	if err != nil {
 		fmt.Printf("could not create token: %s\n", err.Error())
 		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)

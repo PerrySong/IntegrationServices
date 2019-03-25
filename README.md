@@ -32,6 +32,24 @@ Show table
 $ \dt
 ```
 
+List listening port
+```
+$ netstat -ap tcp | grep -i "listen"
+```
+
+start local postgres with brew
+
+```
+$ brew services start postgresql
+$ brew services stop postgresql
+```
+
+Find running process in 5432
+```
+sudo lsof -i :5432
+```
+
+
 ## TODO
 1. Does gorm prevent sql injection? https://github.com/jinzhu/gorm/issues/152
 2. Remove hard code username/password
