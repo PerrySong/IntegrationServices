@@ -6,8 +6,8 @@ FROM golang:1.9 AS builder
 
 RUN go version
 
-COPY . "/go/src/github.com/PerrySong/OAuth"
-WORKDIR "/go/src/github.com/PerrySong/OAuth"
+COPY . "/go/src/github.com/PerrySong/OAuth2"
+WORKDIR "/go/src/github.com/PerrySong/OAuth2"
 
 RUN go get -v -t  .
 

@@ -53,3 +53,4 @@ sudo lsof -i :5432
 ## TODO
 1. Does gorm prevent sql injection? https://github.com/jinzhu/gorm/issues/152
 2. Remove hard code username/password
+3. * Associate id with github token

@@ -36,4 +36,6 @@ var (
 
 	randomState           = "random"
 	githubGraphQlEndPoint = "https://api.github.com/graphql"
+
+	jwtSecret = "showcase_secret"
 )
