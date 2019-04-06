@@ -106,7 +106,7 @@ func GithubCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	//}
 
 	html := `<html><body>
-				<a href="localhost:3000">Go to main page</a>
+				<a href="http://localhost:3000/">Go to main page</a>
 			</body></html>`
 
 	fmt.Fprintf(w, html)
