@@ -68,6 +68,29 @@ func (*Server) GetGithubRepos(ctx context.Context, req *userpb.GithubRepoListReq
 	return &res, nil
 }
 
+/**
+Get the programming languages of a specific user
+*/
+func (*Server) GetProgrammingLanguages(ctx context.Context, req *userpb.LanguagesRequest) (*userpb.LanguagesResponse, error) {
+	id := req.GetId()
+	db, err := models.GetDb()
+	if err != nil {
+		log.Fatalf("Can not get db %v", err)
+	}
+	var repos []models.Repository
+	db.Debug().Where("user_id=?", id).Find(&repos)
+	var res userpb.LanguagesResponse
+	var languageList []string
+	for _, repo := range repos {
+		languageList = append(languageList, repo.Language)
+	}
+	res.Language = languageList
+
+	log.Println("res = ", res)
+
+	return &res, nil
+}
+
 func (*Server) UserHasToken(ctx context.Context, req *userpb.UserHasTokenRequest) (*userpb.UserHasTokenResponse, error) {
 	id := req.GetId()
 	var githubToken models.GithubToken

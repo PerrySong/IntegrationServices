@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="114e7684-93f1-4016-b950-674f3c015018" name="Default Changelist" comment="Fixed store usertoken bug">
+    <list default="true" id="114e7684-93f1-4016-b950-674f3c015018" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gopkg.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gopkg.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/github_controllers.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/github_controllers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/github_token.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/github_token.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/user.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/user.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servers/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/servers/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setupRun.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setupRun.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/parser.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/parser.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/services/github.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="662">
-              <caret line="69" column="1" lean-forward="true" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+              <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -56,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/servers/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="1185">
+              <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -69,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/controllers/github_controllers.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
-              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+              <caret line="110" selection-start-line="110" selection-end-line="110" />
             </state>
           </provider>
         </entry>
@@ -107,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proto/user.pb.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="38" column="107" selection-start-line="38" selection-start-column="107" selection-end-line="38" selection-end-column="107" />
+            <state relative-caret-position="3099">
+              <caret line="240" column="13" selection-start-line="240" selection-start-column="5" selection-end-line="240" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -116,17 +108,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proto/user.proto">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="67" column="63" lean-forward="true" selection-start-line="67" selection-start-column="63" selection-end-line="67" selection-end-column="63" />
+            <state relative-caret-position="287">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proto/generate.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+            <state relative-caret-position="30">
+              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -177,12 +169,10 @@
         <option value="$PROJECT_DIR$/util/parser_test.go" />
         <option value="$PROJECT_DIR$/proto/README.md" />
         <option value="$PROJECT_DIR$/generate.sh" />
-        <option value="$PROJECT_DIR$/proto/user.pb.go" />
         <option value="$PROJECT_DIR$/models/github_test.go" />
         <option value="$PROJECT_DIR$/models/README.md" />
         <option value="$PROJECT_DIR$/models/migration.go" />
         <option value="$PROJECT_DIR$/clients/userclient.go" />
-        <option value="$PROJECT_DIR$/proto/generate.sh" />
         <option value="$PROJECT_DIR$/models/github.go" />
         <option value="$PROJECT_DIR$/DBMigrate.go" />
         <option value="$PROJECT_DIR$/models/model.go" />
@@ -199,8 +189,10 @@
         <option value="$PROJECT_DIR$/models/github_token.go" />
         <option value="$PROJECT_DIR$/controllers/github_controllers.go" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/servers/server.go" />
         <option value="$PROJECT_DIR$/proto/user.proto" />
+        <option value="$PROJECT_DIR$/proto/generate.sh" />
+        <option value="$PROJECT_DIR$/proto/user.pb.go" />
+        <option value="$PROJECT_DIR$/servers/server.go" />
       </list>
     </option>
   </component>
@@ -288,7 +280,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Bash.generate.sh">
+  <component name="RunManager" selected="Go Build.go build server.go">
     <configuration name="generate.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
       <module name="OAuth2" />
       <option name="INTERPRETER_OPTIONS" value="bash" />
@@ -360,8 +352,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Bash.generate.sh" />
         <item itemvalue="Go Build.go build server.go" />
+        <item itemvalue="Bash.generate.sh" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build DBMigrate.go" />
         <item itemvalue="Go Test.github_controllers_test.go" />
@@ -411,6 +403,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="36" width="1365" height="820" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24565382" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -447,7 +440,8 @@
     <MESSAGE value="Add transfer button" />
     <MESSAGE value="Adding userId to integration service" />
     <MESSAGE value="Fixed store usertoken bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed store usertoken bug" />
+    <MESSAGE value="Update proto grenerate.sh, fixed the bug proto_gen not found" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update proto grenerate.sh, fixed the bug proto_gen not found" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/docker.go" />
@@ -648,7 +642,7 @@
     <entry file="file://$PROJECT_DIR$/controllers/github_controllers.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
-          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
         </state>
       </provider>
     </entry>
@@ -676,6 +670,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/services/github.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proto/generate.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proto/user.pb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3099">
+          <caret line="240" column="13" selection-start-line="240" selection-start-column="5" selection-end-line="240" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/models/github.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-41">
@@ -686,38 +701,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/github.go">
+    <entry file="file://$PROJECT_DIR$/proto/user.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="69" column="1" lean-forward="true" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+        <state relative-caret-position="287">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/servers/server.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proto/user.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="67" column="63" lean-forward="true" selection-start-line="67" selection-start-column="63" selection-end-line="67" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proto/user.pb.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="38" column="107" selection-start-line="38" selection-start-column="107" selection-end-line="38" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proto/generate.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        <state relative-caret-position="1185">
+          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="31" />
         </state>
       </provider>
     </entry>
