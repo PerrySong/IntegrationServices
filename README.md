@@ -1,5 +1,15 @@
 # Integration service
 
+## How to Run
+```$xslt
+
+$ sh setupRun.sh
+// Wait for like 30 sec til these servers fully start up
+$ go run DBMigrate.go
+
+```
+
+
 ## How to build dockerfile for golang project
 
 1. Dependencies management tool:
