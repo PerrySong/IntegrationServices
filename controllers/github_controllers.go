@@ -79,22 +79,17 @@ func GithubCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Store token
-	err = models.StoreToken(token.AccessToken, 1)
+	err = models.StoreToken(token.AccessToken, userId)
 	if err != nil {
 		fmt.Println("err storing token ", err)
 	}
 	// Using stored token to fetch user
+
 	services.FetchAndStoreRepos(uint(userId))
 	services.FetchAndStoreUser(uint(userId))
 
-	//tokenStr, err := models.GetGitToken(1)
-	//if err != nil {
-	//	fmt.Println("fail to get token", token.AccessToken)
-	//}
-
-	//fmt.Printf("Get token from user1, token = %s", tokenStr)
-
 	//resp, err := http.Get("https://api.github.com/user?access_token=" + token.AccessToken)
+	//log.Println("response = ", resp.Body)
 	//
 	//if err != nil {
 	//	fmt.Printf("could not create token: %s\n", err.Error())

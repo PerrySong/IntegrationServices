@@ -5,6 +5,7 @@ import (
 	"github.com/PerrySong/OAuth2/controllers"
 	"github.com/PerrySong/OAuth2/models"
 	"github.com/PerrySong/OAuth2/services"
+	"log"
 	"net/http"
 )
 
@@ -23,12 +24,13 @@ func main() {
 
 	http.HandleFunc("/transfer", transferPage)
 
-	http.ListenAndServe("localhost:8080", nil)
+	err := http.ListenAndServe("localhost:8080", nil)
+	log.Println(err)
 }
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
 	var html = `<html><body><a href="login">Google login</a> 
-				<a href="login/github?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsIiwiaWQiOjEzMTQsImlzcyI6ImNvdXJzZSJ9.jFqciZl0NKkK8zsWUy3gRJuovW3oWt9QFwYTklFRXRw">Github login</a>
+				<a href="login/github?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNwZnNjbXpAZ21haWwuY29tIiwiaWQiOjEsImlzcyI6ImNvdXJzZSJ9.i4ymF6PF1cvVbA6QQiNkPk4HhJIHWsGgTr5FhUQhrf0">Github login</a>
 				<a href="login/linkedin">Linkedin login</a>
 				</body></html>`
 

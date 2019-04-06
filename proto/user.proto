@@ -29,7 +29,13 @@ message GithubRepoListRequest {
     uint64 id = 1;
 }
 
+message LanguagesRequest {
+    uint64 id = 1;
+}
 
+message LanguagesResponse {
+    repeated string language = 1;
+}
 
 message UserGithubBasicRequest {
     uint64 id = 1;
@@ -60,4 +66,5 @@ service UserService {
     rpc GetGithubInfo(UserGithubBasicRequest) returns (UserGithubBasicResponse) {};
     rpc GetGithubRepos(GithubRepoListRequest) returns (GithubRepoListResponse) {};
     rpc UserHasToken(UserHasTokenRequest) returns (UserHasTokenResponse) {};
+    rpc GetProgrammingLanguages(LanguagesRequest) returns (LanguagesResponse) {};
 }

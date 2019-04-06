@@ -20,6 +20,7 @@ func StoreToken(tokenStr string, userid uint) error {
 		return err
 	}
 	token := GithubToken{UserId: userid, Token: tokenStr}
+	db.Debug().Model(&token).Update("token", token.Token)
 	db.Debug().Create(&token)
 	return nil
 }

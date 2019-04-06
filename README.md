@@ -37,6 +37,10 @@ List listening port
 $ netstat -ap tcp | grep -i "listen"
 ```
 
+```
+lsof -n -i4TCP:8080 
+```
+
 start local postgres with brew
 
 ```
